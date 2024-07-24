@@ -1,11 +1,10 @@
-/* eslint-disable */
-import { uploadPhoto, createUser } from './utils.js';
+import { uploadPhoto, createUser } from './utils';
 
 export default function handleProfileSignup() {
   return Promise
     .all([uploadPhoto(), createUser()])
-    .then(([photoRes, usrRes]) => {
-      console.log(`${photoRes.body} ${photoRes.firstName} ${usrRes.lastName}`);
+    .then((idx) => {
+      console.log(`${idx[0].body} ${idx[1].firstName} ${idx[1].lastName}`);
     })
     .catch(() => console.log('Signup system offline'));
 }

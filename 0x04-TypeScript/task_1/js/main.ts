@@ -67,4 +67,35 @@ export const printTeacher: printTeacherFunction = (firstName: string, lastName: 
   return `${firstName[0]}. ${lastName}`;
 }
 
-console.log(printTeacher("Soufiane", "Sadgali"));
+// console.log(printTeacher("Soufiane", "Sadgali"));
+
+export interface stConstructor {
+  new (firstName: string, lastName: string): StudentInterface;
+}
+
+export interface StudentInterface {
+  workOnHomework(): string;
+  displayName(): string;
+}
+
+export default class StudentClass implements StudentInterface {
+  firstName: string;
+  lastName: string;
+
+  constructor(firstName: string, lastName: string) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+  }
+
+  workOnHomework(): string {
+    return 'Currently working';
+  }
+
+  displayName(): string {
+    return this.firstName;
+  }
+}
+
+export const student: StudentClass = new StudentClass('Soufiane', 'Sadgali');
+console.log(student.displayName());
+console.log(student.workOnHomework());

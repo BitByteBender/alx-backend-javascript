@@ -35,6 +35,7 @@ export interface Directors extends Teacher {
   numberOfReports: number;
 };
 
+/*
 const firstDirec: Directors = {
   firstName: 'Reda',
   lastName: 'Alami',
@@ -56,4 +57,14 @@ export const direcsList: Teacher[] = [firstDirec, secondDirec];
 
 console.log(firstDirec);      
 console.log(direcsList[1]);
+*/
 
+export interface printTeacherFunction {
+  (firstName: string, lastName: string): string;
+}
+
+export const printTeacher: printTeacherFunction = (firstName: string, lastName: string): string => {
+  return `${firstName[0]}. ${lastName}`;
+}
+
+console.log(printTeacher("Soufiane", "Sadgali"));

@@ -59,6 +59,20 @@ export function executeWork(employee: (Director | Teacher)) {
   else return employee.workTeacherTasks();
 }
 
+/**
 console.log(executeWork(createEmployee(200)));
 console.log(executeWork(createEmployee(1000)));
 console.log(executeWork(createEmployee('$500')));
+*/
+
+export type Subjects = 'Math' | 'History';
+
+export function teachClass(todayClass: Subjects): string {
+  if (todayClass === 'Math') return 'Teaching Math';
+  else if (todayClass === 'History') return 'Teaching History';
+  else throw Error(`${todayClass}` + ' is an <Invalid Subject>');
+}
+
+console.log(teachClass('Math'));
+console.log(teachClass('History'));
+console.log(teachClass('CS'));

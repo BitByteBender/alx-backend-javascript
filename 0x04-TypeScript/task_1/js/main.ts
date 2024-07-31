@@ -7,6 +7,7 @@ export interface Teacher {
   [idxSig: string]: any;
 }
 
+/*
 const firstTeacher: Teacher = {
   firstName: 'Soufiane',
   lastName: 'Sadgali',
@@ -26,7 +27,33 @@ const secondTeacher: Teacher = {
 
 export const teachersList: Teacher[] = [firstTeacher, secondTeacher];
 
-//console.log(firstTeacher);
-//console.log(secondTeacher);
-console.log(teachersList[0]);
+console.log(firstTeacher);
 console.log(teachersList[1]);
+*/
+
+export interface Directors extends Teacher {
+  numberOfReports: number;
+};
+
+const firstDirec: Directors = {
+  firstName: 'Reda',
+  lastName: 'Alami',
+  fullTimeEmployee: true,
+  location: 'London',
+  numberOfReports: 17,
+};
+
+const secondDirec: Directors = {
+  firstName: 'Saad',      
+  lastName: 'Amrani',  
+  fullTimeEmployee: false, 
+  location: 'Oklahoma',
+  numberOfReports: 12,
+  contract: false,
+};
+
+export const direcsList: Teacher[] = [firstDirec, secondDirec];    
+
+console.log(firstDirec);      
+console.log(direcsList[1]);
+

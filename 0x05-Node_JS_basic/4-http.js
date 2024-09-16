@@ -1,7 +1,7 @@
 /*
  * Basic HTTP server using Node's HTTP module
  * Listening to localhost::1245
- * /
+*/
 const http = require('http');
 const displayMessage = require('./0-console');
 

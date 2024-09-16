@@ -1,3 +1,6 @@
+/*
+ * Reading a file synchronously with NodeJS
+ */
 const fs = require('fs');
 const displayMessage = require('./0-console');
 

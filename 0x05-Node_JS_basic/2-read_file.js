@@ -2,7 +2,7 @@ const fs = require('fs');
 const displayMessage = require('./0-console');
 
 function countStudents(path) {
-  if (!(fs.existsSync(path) || fs.statSync(path).isFile())) throw Error('Cannot load the database');
+  if (!(fs.existsSync(path) && fs.statSync(path).isFile())) throw Error('Cannot load the database');
 
   const dt = fs.readFileSync(path, 'utf-8').trim();
 

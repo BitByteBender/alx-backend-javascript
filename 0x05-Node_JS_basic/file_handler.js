@@ -13,7 +13,7 @@ function stFile(path) {
     const ln = dt.split('\n').filter((ln) => ln.trim() !== '');
 
     const students = ln.slice(1);
-    let strContainer = `Number of students: ${students.length}\n`;
+    let strContainer = `Number of students: ${students.length}`;
 
     const fields = {};
 
@@ -30,7 +30,7 @@ function stFile(path) {
       });
 
     for (const [field, names] of Object.entries(fields)) {
-      strContainer += `Number of students in ${field}: ${names.length}. List: ${names.join(', ')}`;
+      strContainer += `\nNumber of students in ${field}: ${names.length}. List: ${names.join(', ')}`;
     }
 
     return `This is the list of our students\n${strContainer}`;

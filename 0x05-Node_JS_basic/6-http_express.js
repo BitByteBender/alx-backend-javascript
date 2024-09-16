@@ -1,3 +1,6 @@
+/*
+ * Creation of small http server using Express
+ */
 const express = require('express');
 const displayMessage = require('./0-console');
 

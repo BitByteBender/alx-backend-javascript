@@ -1,3 +1,6 @@
+/**
+ * Readin a file asynchronously with Node JS
+ */
 const fs = require('fs').promises;
 const displayMessage = require('./0-console');
 

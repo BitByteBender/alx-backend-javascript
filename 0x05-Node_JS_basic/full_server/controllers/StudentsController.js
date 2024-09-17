@@ -1,6 +1,6 @@
 import readDatabase from '../utils';
 
-const enMAJORS = object.freeze({
+const enMAJORS = Object.freeze({
   CS: 'CS',
   SWE: 'SWE',
 });
@@ -39,3 +39,4 @@ class StudentsController {
 }
 
 export default StudentsController;
+module.exports = StudentsController;

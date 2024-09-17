@@ -8,4 +8,3 @@ const ROUTES_HANDLER = (app) => {
 };
 
 export default ROUTES_HANDLER;
-module.exports = ROUTES_HANDLER;

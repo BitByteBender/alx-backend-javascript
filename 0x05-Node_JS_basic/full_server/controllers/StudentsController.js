@@ -28,13 +28,13 @@ class StudentsController {
       return res.status(500).send('Major parameter must be CS or SWE');
     }
 
-    readDatabase(path).then((studentCls) => {
+    return readDatabase(path).then((studentCls) => {
       const ByMajor = studentCls[major];
       if (ByMajor) {
         return res.status(200).send(`List: ${ByMajor.join(', ')}`);
       }
       return res.status(200).send('List:');
-    }).catch((err) => res.status(500).send(err.message));
+    }).catch(() => res.status(500).send('Cannot load the database'));
   }
 }
 

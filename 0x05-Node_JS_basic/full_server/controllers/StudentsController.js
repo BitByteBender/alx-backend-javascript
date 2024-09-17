@@ -10,7 +10,7 @@ class StudentsController {
     const path = process.argv[2] || '';
 
     readDatabase(path).then((studentCls) => {
-      let content = 'This is the list of our students';
+      let content = 'This is the list of our students\n';
       const fields = Object.keys(studentCls).sort();
 
       fields.forEach((field) => {

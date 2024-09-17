@@ -4,6 +4,9 @@
 */
 const http = require('http');
 const displayMessage = require('./0-console');
+
+const HOST = 'localhost';
+const PORT = 1245;
 const stFile = require('./file_handler');
 
 const argPath = process.argv.length > 2 ? process.argv[2] : '';
@@ -38,8 +41,8 @@ const app = http.createServer(async (req, res) => {
   }
 });
 
-app.listen((1245), () => {
-  displayMessage('Server listening to localhost:1245');
+app.listen((PORT), (HOST), () => {
+  displayMessage(`Server listening to http://${HOST}:${PORT}`);
 });
 
 module.exports = app;

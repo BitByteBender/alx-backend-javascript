@@ -2,7 +2,7 @@
   "name": "task_0",
   "version": "1.0.0",
   "description": "Mocha test setup",
-  "main": "0-calcul.js",
+  "main": "Super_tester",
   "scripts": {
     "test": "mocha"
   },
@@ -11,6 +11,6 @@
   "devDependencies": {
     "chai": "^4.3.6",
     "mocha": "^10.7.3",
-    "sinon": "^14.0.0"
+    "sinon": "^10.0.0"
   }
 }

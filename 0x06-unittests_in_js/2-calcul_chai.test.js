@@ -42,10 +42,10 @@ describe('calculateNumber', () => {
 
   describe('Invalid op', () => {
     it('Throws an Error for invalid op types', () => {
-      expect(() => calculateNumber('MULTI', 3.2, 0), Error);
-      expect(() => calculateNumber('ADD', -2.3, 2), Error);
-      expect(() => calculateNumber('REMAINDER', 1, 2.6), Error);
-      expect(() => calculateNumber('SQRT', 25, 2), Error);
+      expect(() => calculateNumber('MULTI', 3.2, 0)).to.throw(Error);
+      expect(() => calculateNumber('ADD', -2.3, 2)).to.throw(Error);
+      expect(() => calculateNumber('REMAINDER', 1, 2.6)).to.throw(Error);
+      expect(() => calculateNumber('SQRT', 25, 2)).to.throw(Error);
     });
   });
 });

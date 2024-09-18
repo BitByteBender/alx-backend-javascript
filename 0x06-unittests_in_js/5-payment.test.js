@@ -6,7 +6,7 @@
 const sinon = require('sinon');
 const { expect } = require('chai');
 const Utils = require('./utils');
-const sendPaymentRequestToApi = require('./4-payment');
+const sendPaymentRequestToApi = require('./5-payment');
 
 describe('sendPaymentRequestToApi', () => {
   let spy;

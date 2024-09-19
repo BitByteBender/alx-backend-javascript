@@ -48,12 +48,11 @@ describe('GET /cart/:id', () => {
 describe('GET /available_payments', () => {
   it('Returns payment methods obj', (done) => {
     request.get(`${devSrv}/available_payments`, (err, res, body) => {
-      expect(err).to.be.null;
       expect(res.statusCode).to.equal(200);
       const Result = {
-        payment_methods: {
-	  credit_cards: true,
-	  paypal: false,
+          payment_methods: {
+          credit_cards: true,
+          paypal: false,
 	},
       };
       expect(JSON.parse(body)).to.deep.equal(Result);
@@ -72,12 +71,10 @@ describe('POST /login', () => {
       body: rslt,
     };
     request(dt, (err, res, body) => {
-	expect(err).to.be.null;
-        expect(res.statusCode).to.equal(200);
-	expect(body).to.equal('Welcome Betty');
-	done();
-      }
-    );
+      expect(res.statusCode).to.equal(200);
+      expect(body).to.deep.equal('Welcome Betty');
+      done();
+    });
   });
 
   it('Returns 400 for a missing userName', (done) => {
@@ -89,10 +86,9 @@ describe('POST /login', () => {
       body: rslt,
     };
     request(dt, (err, res, body) => {
-        expect(err).to.be.null;
-        expect(res.statusCode).to.equal(400);
-        done();
-      }
-    );
+      expect(err).to.be.null;
+      expect(res.statusCode).to.equal(400);
+      done();
+    });
   });
 });

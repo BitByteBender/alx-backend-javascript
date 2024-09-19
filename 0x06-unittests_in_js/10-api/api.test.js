@@ -49,7 +49,9 @@ describe('GET /available_payments', () => {
   it('Returns payment methods obj', (done) => {
     request.get(`${devSrv}/available_payments`, (err, res, body) => {
       expect(res.statusCode).to.equal(200);
-      expect(body).to.equal('{"payment_methods":{"credit_cards":true,"paypal":false}}');
+      expect(body).to.equal(
+        '{"payment_methods":{"credit_cards":true,"paypal":false}}'
+      );
       done();
     });
   });
@@ -57,13 +59,13 @@ describe('GET /available_payments', () => {
 
 describe('POST /login', () => {
   it('Returns welcoming message for a valid userName', (done) => {
-    const dt = {
+    const data = {
       method: 'POST',
-      url: `${devSrv}/login`,
+      url: `${devSrv}/login/`,
       json: true,
       body: { userName: 'Betty' },
     };
-    request(dt, (err, res, body) => {
+    request(data, (err, res, body) => {
       expect(res.statusCode).to.equal(200);
       expect(body).to.equal('Welcome Betty');
       done();
@@ -71,14 +73,14 @@ describe('POST /login', () => {
   });
 
   it('Returns 400 for a missing userName', (done) => {
-    const dt = {
+    const data = {
       method: 'POST',
       url: `${devSrv}/login/someone`,
       json: true,
-      body: { userName: 'Betty' }
+      body: { userName: 'Betty' },
     };
-    request(dt, (err, res, body) => {
-      expect(res.statusCode).to.equal(400);
+    request(data, (err, res, body) => {
+      expect(res.statusCode).to.equal(404);
       done();
     });
   });

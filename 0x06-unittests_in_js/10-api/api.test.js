@@ -47,7 +47,7 @@ describe('GET /cart/:id', () => {
 
 describe('GET /available_payments', () => {
   it('Returns payment methods obj', (done) => {
-    request.get(`${devServ}/available_payments`, (err, res, body) => {
+    request.get(`${devSrv}/available_payments`, (err, res, body) => {
       expect(err).to.be.null;
       expect(res.statusCode).to.equal(200);
       const Result = {
@@ -81,6 +81,7 @@ describe('POST /login', () => {
   });
 
   it('Returns 400 for a missing userName', (done) => {
+    const rslt = { userName: 'Betty' };
     const dt = {
       method: 'POST',
       url: `${devSrv}/login`,

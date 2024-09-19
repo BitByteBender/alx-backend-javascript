@@ -49,13 +49,7 @@ describe('GET /available_payments', () => {
   it('Returns payment methods obj', (done) => {
     request.get(`${devSrv}/available_payments`, (err, res, body) => {
       expect(res.statusCode).to.equal(200);
-      const Result = {
-          payment_methods: {
-          credit_cards: true,
-          paypal: false,
-	},
-      };
-      expect(JSON.parse(body)).to.deep.equal(Result);
+      expect(body).to.equal('{"payment_methods":{"credit_cards":true,"paypal":false}}');
       done();
     });
   });

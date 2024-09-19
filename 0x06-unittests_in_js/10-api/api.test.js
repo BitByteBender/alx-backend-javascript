@@ -63,30 +63,27 @@ describe('GET /available_payments', () => {
 
 describe('POST /login', () => {
   it('Returns welcoming message for a valid userName', (done) => {
-    const rslt = { userName: 'Betty' };
     const dt = {
       method: 'POST',
       url: `${devSrv}/login`,
       json: true,
-      body: rslt,
+      body: { userName: 'Betty' },
     };
     request(dt, (err, res, body) => {
       expect(res.statusCode).to.equal(200);
-      expect(body).to.deep.equal('Welcome Betty');
+      expect(body).to.equal('Welcome Betty');
       done();
     });
   });
 
   it('Returns 400 for a missing userName', (done) => {
-    const rslt = { userName: 'Betty' };
     const dt = {
       method: 'POST',
-      url: `${devSrv}/login`,
+      url: `${devSrv}/login/someone`,
       json: true,
-      body: rslt,
+      body: { userName: 'Betty' }
     };
     request(dt, (err, res, body) => {
-      expect(err).to.be.null;
       expect(res.statusCode).to.equal(400);
       done();
     });

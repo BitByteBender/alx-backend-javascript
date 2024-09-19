@@ -16,7 +16,7 @@ app.get('/cart/:id(\\d+)', (req, res) => {
 });
 
 app.get('/available_payments', (req, res) => {
-  res.json({
+  res.send({
     payment_methods: {
       credit_cards: true,
       paypal: false
@@ -26,9 +26,6 @@ app.get('/available_payments', (req, res) => {
 
 app.post('/login', (req, res) => {
   const { userName } = req.body;
-  if (!userName) {
-    return res.status(400).send('Missing username');
-  }
   res.send(`Welcome ${userName}`);
 });
 
